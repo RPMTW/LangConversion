@@ -34,7 +34,8 @@ async function LangToJson(path) {
             }
         }
     }
-    console.log(obj);
+    fs.writeFileSync("./data/Json.json", JSON.stringify(obj, null, 4));
+    console.log("已經將轉化後內容儲存");
     return String(obj);
 }
 
