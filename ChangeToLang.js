@@ -1,6 +1,6 @@
 const fs = require("fs");
 function JsonToLang(path) {
-    let LangJson = parse(fs.readFileSync(path).toString());
+    let LangJson = JSON.parse(fs.readFileSync(path).toString());
     let ObjJsonKey = Object.keys(LangJson);
     let ObjLang = "";
     for (let i = 0; i < ObjJsonKey.length; i++) {
@@ -10,9 +10,9 @@ function JsonToLang(path) {
             ObjLang += `${ObjJsonKey[i]}=${LangJson[ObjJsonKey[i]]}\n`;
         }
     }
-    fs.writeFileSync("./data/Lang.lang", JSON.stringify(ObjLang, null, 4));
+    fs.writeFileSync("./data/Lang.lang", ObjLang);
     console.log("已經將轉化後內容儲存");
     return ObjLang;
 }
 
-LangToJson("./data/Json.json");
+JsonToLang("./data/Json.json");

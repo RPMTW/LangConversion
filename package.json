@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "child_process": "^1.0.2",
+    "comment-json": "^4.1.0",
     "fs": "^0.0.1-security",
     "utf8": "^3.0.0",
     "util": "^0.12.4"
